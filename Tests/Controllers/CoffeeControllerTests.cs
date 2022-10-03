@@ -18,23 +18,22 @@ namespace API_Interactive_Lab_1.Tests.Controllers
         {
             string expectedContent = "I like coffee!";
 
-           // var controller = new CoffeeController();
+            // var controller = new CoffeeController();
             var result = _coffeeController.GetCoffeeLover();
 
             Assert.AreEqual(expectedContent, result);
         }
 
-        [TestCase("")]
-        [TestCase(" ")]
+
         [TestCase(null)]
-        public void TestCoffeenameParameter(string name)
+        public void TestCoffeeWithNoParameters(string name)
         {
             string expectedName = "latte";
             int expectedID = -1;
 
             var result = _coffeeController.Get(name);
-            Assert.AreEqual(expectedName, result.Name );
-            Assert.AreEqual(expectedID, result.ID );
+            Assert.AreEqual(expectedName, result.Name);
+            Assert.AreEqual(expectedID, result.ID);
         }
 
         [Test]

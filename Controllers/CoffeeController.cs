@@ -14,10 +14,15 @@ namespace API_Interactive_Lab_1.Controllers
         }
 
         [HttpGet("{name}")]
-        
+
         public Coffee Get(string? name)
         {
-            return new Coffee(name);
+            return new Coffee
+            {
+                Name = name ?? "latte",
+                ID = (name != null ? 7 : -1)
+            };
+
         }
     }
 }
